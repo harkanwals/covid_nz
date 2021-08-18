@@ -27,3 +27,4 @@ scans <- read_csv("raw_data/nz-covid-tracer-usage-2021-08-18.csv") %>%
 scans %>% 
   mutate(origin_date = as.Date(gsub(" 12:00","", date_time_from, fixed = TRUE))) %>% 
   write_csv("data/scans_count.csv")
+
