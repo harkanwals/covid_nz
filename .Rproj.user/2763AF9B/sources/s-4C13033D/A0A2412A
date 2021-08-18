@@ -1,27 +1,27 @@
 {
-    "id": "CD0EBA73",
-    "path": "~/Dropbox/spinoff/data_journalism/covid/scripts/data_cleaning.R",
-    "project_path": "scripts/data_cleaning.R",
+    "id": "A0A2412A",
+    "path": "~/Dropbox/spinoff/data_journalism/covid/scripts/data_scraping.R",
+    "project_path": "scripts/data_scraping.R",
     "type": "r_source",
     "hash": "0",
     "contents": "",
     "dirty": true,
-    "created": 1629270158949.0,
+    "created": 1629294154043.0,
     "source_on_save": false,
-    "relative_order": 2,
+    "relative_order": 5,
     "properties": {
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "24,0",
-        "scrollLine": "2"
+        "cursorPosition": "38,0",
+        "scrollLine": "20"
     },
     "folds": "",
-    "lastKnownWriteTime": 1629292982,
+    "lastKnownWriteTime": 1629294164,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1629293890585,
+    "last_content_update": 1629295390756,
     "read_only": false,
     "read_only_alternatives": []
 }

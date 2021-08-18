@@ -1,0 +1,38 @@
+library(rvest)
+
+url_data <- "https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-health-advice-public/contact-tracing-covid-19/covid-19-contact-tracing-locations-interest"
+
+css_selector_table_1 <- "#node-11392 > div.field.field-name-body.field-type-text-with-summary.field-label-hidden > div > div > div:nth-child(7) > table"
+
+
+url_data %>% 
+  read_html() -> web_page
+
+html_nodes(web_page, "table") %>% 
+  .[1] %>% 
+  html_table(fill = TRUE) -> auckland
+
+auckland_locations <- auckland[[1]]
+
+html_nodes(web_page, "table") %>% 
+  .[2] %>% 
+  html_table(fill = TRUE) -> coromandel
+
+coromandel_locations <- coromandel[[1]]
+
+coromandel_locations %>% 
+  clean_names() %>% 
+  mutate( area = "Coromandel") ->
+  coromandel_locations
+  # write_csv("data/coromandel_locations.csv")
+
+auckland_locations %>%
+  clean_names() %>% 
+  mutate(area = "Auckland") ->
+  auckland_locations
+  # write_csv("data/auckland_locations.csv")
+
+coromandel_locations %>% 
+  rbind(auckland_locations) -> all_locations
+
+all_locations %>% write_csv("data/all_locations.csv")
