@@ -37,5 +37,5 @@ scans %>% select(origin_date, "Scans" = scans, "Manual Entries" = manual_entries
   write_csv("data/tracer_scans.csv")
 
 scans %>% 
-  select(origin_date, "Active Devices" = active_devices, "Bluetooth Active 24hr" = bluetooth_active_24hr) %>% 
+  select(origin_date, "Active Devices" = active_devices) %>% 
   write_csv("data/tracer_actives.csv")
