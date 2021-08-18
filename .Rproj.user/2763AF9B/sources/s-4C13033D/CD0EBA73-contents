@@ -27,7 +27,7 @@ scans[is.na(scans)] = 0
 
 
 scans %>% 
-  mutate(origin_date = as.Date(gsub(" 12:00","", date_time_from, fixed = TRUE))) ->
+  mutate(origin_date = as.Date(gsub(" 12:00","", date_time_from, fixed = TRUE), format= "%d/%m/%y")) ->
   scans
 
 scans %>% select(origin_date, app_registrations, nzbn_registered_businesses) %>% 
