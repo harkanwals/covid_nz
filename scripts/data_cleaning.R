@@ -25,9 +25,9 @@ scans <- read_csv("raw_data/nz-covid-tracer-usage-2021-08-18.csv") %>%
 
 scans[is.na(scans)] = 0
 
-
 scans %>% 
-  mutate(origin_date = as.Date(gsub(" 12:00","", date_time_from, fixed = TRUE), format= "%d/%m/%y")) ->
+  mutate(origin_date = gsub(" 12:00","", date_time_from, fixed = TRUE))  %>% 
+  mutate(origin_date = as.Date(origin_date, format="%d/%m/%Y")) ->
   scans
 
 scans %>% select(origin_date, app_registrations, nzbn_registered_businesses) %>% 
