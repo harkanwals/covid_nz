@@ -1,0 +1,26 @@
+{
+    "id": "26449973",
+    "path": "~/Dropbox/spinoff/data_journalism/covid/data/all_locations.csv",
+    "project_path": "data/all_locations.csv",
+    "type": "text",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1629295774172.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "18,36",
+        "scrollLine": "13"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1629295390,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1629295390,
+    "read_only": false,
+    "read_only_alternatives": []
+}

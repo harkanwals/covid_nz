@@ -1,4 +1,5 @@
 library(rvest)
+library(tidygeocoder)
 
 url_data <- "https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-health-advice-public/contact-tracing-covid-19/covid-19-contact-tracing-locations-interest"
 
@@ -36,3 +37,14 @@ coromandel_locations %>%
   rbind(auckland_locations) -> all_locations
 
 all_locations %>% write_csv("data/all_locations.csv")
+
+all_locations %>% 
+  filter(address != "Bus 97B") %>% 
+  filter(address != "Bus 25B") %>% 
+  geocode(address, method = 'osm', lat = latitude , long = longitude) ->
+  some_locations_geocoded
+
+  
+  
+some_locations_geocoded %>% 
+  write_csv("data/some_locations_geocoded.csv")
