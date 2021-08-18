@@ -23,7 +23,19 @@ cases %>%
 scans <- read_csv("raw_data/nz-covid-tracer-usage-2021-08-18.csv") %>% 
   clean_names()
 
-scans %>% 
-  mutate(origin_date = as.Date(gsub(" 12:00","", date_time_from, fixed = TRUE))) %>% 
-  write_csv("data/scans_count.csv")
+scans[is.na(scans)] = 0
 
+
+scans %>% 
+  mutate(origin_date = as.Date(gsub(" 12:00","", date_time_from, fixed = TRUE))) ->
+  scans
+
+scans %>% select(origin_date, app_registrations, nzbn_registered_businesses) %>% 
+  write_csv("data/tracer_registrations.csv")
+
+scans %>% select(origin_date, scans, manual_entries) %>% 
+  write_csv("data/tracer_scans.csv")
+
+scans %>% 
+  select(origin_date, active_devices, bluetooth_active_24hr) %>% 
+  write_csv("data/tracer_actives.csv")
