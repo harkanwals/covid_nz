@@ -1,0 +1,29 @@
+library(tidyverse)
+library(janitor)
+
+## Cases
+
+cases <- read_csv("raw_data/covid_cases_2021-08-18.csv") %>% 
+  clean_names() 
+
+cases %>% 
+  filter(dhb != "Managed Isolation & Quarantine") %>% 
+  group_by(report_date) %>% 
+  count(name = "case_count") %>% 
+  write_csv("data/community_case_count.csv")
+
+cases %>% 
+  filter(dhb == "Managed Isolation & Quarantine") %>% 
+  group_by(report_date) %>% 
+  count()  %>% 
+  count(name = "case_count")  %>% 
+  write_csv("data/miq_case_count.csv")
+
+
+## Scans
+scans <- read_csv("raw_data/nz-covid-tracer-usage-2021-08-18.csv") %>% 
+  clean_names()
+
+scans %>% 
+  mutate(origin_date = as.Date(gsub(" 12:00","", date_time_from, fixed = TRUE))) %>% 
+  write_csv("data/scans_count.csv")
