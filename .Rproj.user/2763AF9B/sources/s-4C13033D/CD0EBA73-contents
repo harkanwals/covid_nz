@@ -30,12 +30,12 @@ scans %>%
   mutate(origin_date = as.Date(origin_date, format="%d/%m/%Y")) ->
   scans
 
-scans %>% select(origin_date, app_registrations, nzbn_registered_businesses) %>% 
+scans %>% select(origin_date, "App registrations" = app_registrations, "NZBN Registered Businesses" = nzbn_registered_businesses) %>% 
   write_csv("data/tracer_registrations.csv")
 
-scans %>% select(origin_date, scans, manual_entries) %>% 
+scans %>% select(origin_date, "Scans" = scans, "Manual Entries" = manual_entries) %>% 
   write_csv("data/tracer_scans.csv")
 
 scans %>% 
-  select(origin_date, active_devices, bluetooth_active_24hr) %>% 
+  select(origin_date, "Active Devices" = active_devices, "Bluetooth Active 24hr" = bluetooth_active_24hr) %>% 
   write_csv("data/tracer_actives.csv")
