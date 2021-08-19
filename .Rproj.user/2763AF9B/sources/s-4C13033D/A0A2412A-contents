@@ -48,3 +48,7 @@ all_locations %>%
   
 some_locations_geocoded %>% 
   write_csv("data/some_locations_geocoded.csv")
+
+
+leaflet(some_locations_geocoded) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(day, times), label = ~as.character(address))

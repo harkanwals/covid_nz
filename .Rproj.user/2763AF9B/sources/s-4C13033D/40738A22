@@ -1,27 +1,27 @@
 {
-    "id": "A0A2412A",
+    "id": "40738A22",
     "path": "~/Dropbox/spinoff/data_journalism/covid/scripts/data_scraping.R",
     "project_path": "scripts/data_scraping.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "1584550016",
     "contents": "",
-    "dirty": true,
-    "created": 1629294154043.0,
+    "dirty": false,
+    "created": 1629324921546.0,
     "source_on_save": false,
-    "relative_order": 5,
+    "relative_order": 4,
     "properties": {
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "50,0",
-        "scrollLine": "32"
+        "cursorPosition": "40,0",
+        "scrollLine": "26"
     },
     "folds": "",
-    "lastKnownWriteTime": 1629294164,
+    "lastKnownWriteTime": 1629344618,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1629296486941,
+    "last_content_update": 1629344618011,
     "read_only": false,
     "read_only_alternatives": []
 }
